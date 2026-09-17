@@ -3,7 +3,7 @@
   "name": "io.github.MagzhanSan/snowleo-leads",
   "title": "Snow Leo Leads & Contacts",
   "description": "Local business leads from Google Maps, 7 directories, DuckDuckGo and OpenStreetMap, with contacts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "websiteUrl": "https://github.com/MagzhanSan/mcp-servers-snowleo/tree/main/leads",
   "repository": {
     "url": "https://github.com/MagzhanSan/mcp-servers-snowleo",
@@ -13,7 +13,7 @@
   "remotes": [
     {
       "type": "streamable-http",
-      "url": "https://mcp.apify.com/?actors=snow_leo_data/google-maps-places-scraper-leads-emails,snow_leo_data/yellow-pages-bbb-europages-business-directory-leads-scraper,snow_leo_data/duckduckgo-local-business-scraper,snow_leo_data/no-website-local-business-leads-openstreetmap,snow_leo_data/website-contact-email-phone-social-scraper-lead-extractor"
+      "url": "https://mcp.apify.com/?actors=snow_leo_data/google-maps-places-scraper-leads-emails,snow_leo_data/yellow-pages-scraper-bbb-europages-business-directory-leads,snow_leo_data/duckduckgo-scraper-local-business-maps-leads,snow_leo_data/no-website-local-business-leads-openstreetmap,snow_leo_data/contact-scraper-website-emails-phones-socials-extractor"
     }
   ],
   "_meta": {
@@ -26,10 +26,10 @@
         "billing": "The connecting user's own Apify account is billed per result; there is no key to buy from the publisher",
         "actors": [
           "snow_leo_data/google-maps-places-scraper-leads-emails",
-          "snow_leo_data/yellow-pages-bbb-europages-business-directory-leads-scraper",
-          "snow_leo_data/duckduckgo-local-business-scraper",
+          "snow_leo_data/yellow-pages-scraper-bbb-europages-business-directory-leads",
+          "snow_leo_data/duckduckgo-scraper-local-business-maps-leads",
           "snow_leo_data/no-website-local-business-leads-openstreetmap",
-          "snow_leo_data/website-contact-email-phone-social-scraper-lead-extractor"
+          "snow_leo_data/contact-scraper-website-emails-phones-socials-extractor"
         ]
       },
       "io.github.snowleo.mcp": {

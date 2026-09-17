@@ -30,7 +30,7 @@ picks well. Connect only the server you need.
 ### 1. Leads & Contacts
 
 ```
-https://mcp.apify.com/?actors=snow_leo_data/google-maps-places-scraper-leads-emails,snow_leo_data/yellow-pages-bbb-europages-business-directory-leads-scraper,snow_leo_data/duckduckgo-local-business-scraper,snow_leo_data/no-website-local-business-leads-openstreetmap,snow_leo_data/website-contact-email-phone-social-scraper-lead-extractor
+https://mcp.apify.com/?actors=snow_leo_data/google-maps-places-scraper-leads-emails,snow_leo_data/yellow-pages-scraper-bbb-europages-business-directory-leads,snow_leo_data/duckduckgo-scraper-local-business-maps-leads,snow_leo_data/no-website-local-business-leads-openstreetmap,snow_leo_data/contact-scraper-website-emails-phones-socials-extractor
 ```
 
 Five different indexes of the same world — Google's, Yelp/Apple's, the printed
@@ -40,15 +40,15 @@ comes up short in one can try another.
 | Actor | What it returns | Measured |
 |---|---|---|
 | `snow_leo_data/google-maps-places-scraper-leads-emails` | Places from Google Maps, 56 columns, emails read from the business website | Google Maps stops near 150 places per search view; adaptive grid returned **766 places against 160** for `coffee` in Austin, 4.79x, in 42 s / 168 requests (12 Sep 2026) |
-| `snow_leo_data/yellow-pages-bbb-europages-business-directory-leads-scraper` | Seven directories — Yellow Pages US/CA, BBB, Gelbe Seiten, PagineGialle, Europages, Hotfrog — in 38 shared columns | Every page a human can click on BBB gives **175 unique businesses**; bucketed queries returned **524** (runs `kt2dccRUXf2Itm2BL` = 175, `rKU71p8Dxq62dCgQ0` = 524) |
-| `snow_leo_data/duckduckgo-local-business-scraper` | Local businesses from DuckDuckGo's index (Yelp + Apple Maps data), 44 fields, up to 5 review excerpts with text | Measured 16 Sep 2026 on 10 category+city pairs, with Google Maps swept to its own ceiling on each: of **164 businesses returned, 82 (50%) were not in Google Maps at all**. The `website` field was filled for **97.9%** of rows here against 79.7% in a Google Maps sample of 300 taken the same day |
+| `snow_leo_data/yellow-pages-scraper-bbb-europages-business-directory-leads` | Seven directories — Yellow Pages US/CA, BBB, Gelbe Seiten, PagineGialle, Europages, Hotfrog — in 38 shared columns | Every page a human can click on BBB gives **175 unique businesses**; bucketed queries returned **524** (runs `kt2dccRUXf2Itm2BL` = 175, `rKU71p8Dxq62dCgQ0` = 524) |
+| `snow_leo_data/duckduckgo-scraper-local-business-maps-leads` | Local businesses from DuckDuckGo's index (Yelp + Apple Maps data), 44 fields, up to 5 review excerpts with text | Measured 16 Sep 2026 on 10 category+city pairs, with Google Maps swept to its own ceiling on each: of **164 businesses returned, 82 (50%) were not in Google Maps at all**. The `website` field was filled for **97.9%** of rows here against 79.7% in a Google Maps sample of 300 taken the same day |
 | `snow_leo_data/no-website-local-business-leads-openstreetmap` | Businesses that have **no website**, from OpenStreetMap, 59 fields | Austin: **7,673 named businesses, 3,932 with no website at all**, one Overpass query, 80.5 s. Manchester UK: 5,905 / 4,261 in 13.4 s |
-| `snow_leo_data/website-contact-email-phone-social-scraper-lead-extractor` | One row per website: emails, phones in E.164, socials across 31 platforms, address, hours | On 135 live business sites, home page only found an email on **31** sites; home page plus contact pages found one on **57** |
+| `snow_leo_data/contact-scraper-website-emails-phones-socials-extractor` | One row per website: emails, phones in E.164, socials across 31 platforms, address, hours | On 135 live business sites, home page only found an email on **31** sites; home page plus contact pages found one on **57** |
 
 ### 2. Jobs & Hiring
 
 ```
-https://mcp.apify.com/?actors=snow_leo_data/greenhouse-workday-lever-ashby-ats-jobs-scraper,snow_leo_data/seek-jobstreet-jobsdb-australia-jobs-scraper,snow_leo_data/jobs-ch-scraper-swiss-switzerland-jobs,snow_leo_data/the-muse-remote-company-jobs-scraper
+https://mcp.apify.com/?actors=snow_leo_data/greenhouse-workday-lever-ashby-ats-jobs-scraper,snow_leo_data/seek-scraper-jobstreet-jobsdb-australia-jobs-salaries,snow_leo_data/jobs-ch-scraper-swiss-switzerland-jobs,snow_leo_data/the-muse-scraper-remote-company-jobs-board
 ```
 
 One tool for jobs straight from the employer's own ATS, and three for the job
@@ -58,14 +58,14 @@ can compare a Swiss board against a US careers page without reshaping anything.
 | Actor | What it returns | Measured |
 |---|---|---|
 | `snow_leo_data/greenhouse-workday-lever-ashby-ats-jobs-scraper` | Jobs read live from 20 applicant tracking systems — Greenhouse, Workday, Lever, Ashby, SmartRecruiters, Oracle Cloud, BrassRing, UKG and twelve more | **59,185 jobs in one run**; **1,045 company boards built in**, so an empty input still works. $0.99 per 1,000 where others in the niche charge $1.30, $2.50 and $4.00 |
-| `snow_leo_data/seek-jobstreet-jobsdb-australia-jobs-scraper` | SEEK AU/NZ, JobStreet MY/SG/PH/ID, JobsDB HK/TH — 8 markets, 41 fields | The public API stops at **500 jobs per query** (page 6 at 100 rows returns an empty list); this Actor returned **1,500 unique jobs in 120 s**, zero duplicates |
+| `snow_leo_data/seek-scraper-jobstreet-jobsdb-australia-jobs-salaries` | SEEK AU/NZ, JobStreet MY/SG/PH/ID, JobsDB HK/TH — 8 markets, 41 fields | The public API stops at **500 jobs per query** (page 6 at 100 rows returns an empty list); this Actor returned **1,500 unique jobs in 120 s**, zero duplicates |
 | `snow_leo_data/jobs-ch-scraper-swiss-switzerland-jobs` | jobs.ch, 38 fields, full advert text, direct apply URL, Swiss workload percentage, coordinates | **46,121 jobs live on jobs.ch**; page 101 returns HTTP 422, so one query caps at **2,000**. Measured **2,400 unique jobs in 64 s**, zero duplicates |
-| `snow_leo_data/the-muse-remote-company-jobs-scraper` | The Muse, 27 fields, the entire advert body inline | **411,813 jobs** on the source; page 100 returns HTTP 400 so one query caps at **1,980**. Measured **2,060 unique jobs in 176 s**, zero duplicates |
+| `snow_leo_data/the-muse-scraper-remote-company-jobs-board` | The Muse, 27 fields, the entire advert body inline | **411,813 jobs** on the source; page 100 returns HTTP 400 so one query caps at **1,980**. Measured **2,060 unique jobs in 176 s**, zero duplicates |
 
 ### 3. Marketplaces & Prices
 
 ```
-https://mcp.apify.com/?actors=snow_leo_data/amazon-product-scraper-prices-asin-bestsellers,snow_leo_data/shopify-scraper-products-inventory-variants-sku-prices,snow_leo_data/apple-app-store-reviews-ratings-ios-apps-scraper,snow_leo_data/google-play-store-scraper-apps-reviews-charts,snow_leo_data/airbnb-listings-prices-availability-calendar-reviews-scraper,snow_leo_data/redfin-real-estate-listings-rentals-property-scraper
+https://mcp.apify.com/?actors=snow_leo_data/amazon-product-scraper-prices-asin-bestsellers,snow_leo_data/shopify-scraper-products-inventory-variants-sku-prices,snow_leo_data/apple-app-store-scraper-reviews-ratings-aso-ios-apps,snow_leo_data/google-play-store-scraper-apps-reviews-charts,snow_leo_data/airbnb-scraper-listings-prices-calendar-reviews-occupancy,snow_leo_data/redfin-scraper-property-listings-rentals-prices-sold
 ```
 
 Every tool here returns a priced listing out of somebody's catalogue — products,
@@ -76,15 +76,15 @@ catalogue's own result ceiling.
 |---|---|---|
 | `snow_leo_data/amazon-product-scraper-prices-asin-bestsellers` | amazon.com search, product pages and Best Sellers: prices, list price, discount, rating, stock, seller, specs, BSR, ASIN | **One Amazon search stops at 306 products** for `wireless earbuds` while Amazon's own header claimed over 20,000. Six price bands returned 96 products, **96 unique, zero overlap** |
 | `snow_leo_data/shopify-scraper-products-inventory-variants-sku-prices` | Any Shopify storefront: 42 fields per product, every variant, price, compare-at, SKU, barcode, stock, collection | On 47 live storefronts, 14 refuse `/products.json` on their own domain; reading the shop's Shopify origin recovered **10 of those 14** — **43 stores readable instead of 33** |
-| `snow_leo_data/apple-app-store-reviews-ratings-ios-apps-scraper` | App Store reviews and the full store card, per storefront, across 59 Apple storefronts | Apple caps at **500 reviews per storefront per sort order** (page 11 returns HTTP 400). Opening both sort windows gave **937 unique reviews** on one app, only 63 shared. Notion on 12 Sep 2026: 90,067 ratings in USD in the US storefront, 50,062 in JPY in the Japanese one |
+| `snow_leo_data/apple-app-store-scraper-reviews-ratings-aso-ios-apps` | App Store reviews and the full store card, per storefront, across 59 Apple storefronts | Apple caps at **500 reviews per storefront per sort order** (page 11 returns HTTP 400). Opening both sort windows gave **937 unique reviews** on one app, only 63 shared. Notion on 12 Sep 2026: 90,067 ratings in USD in the US storefront, 50,062 in JPY in the Japanese one |
 | `snow_leo_data/google-play-store-scraper-apps-reviews-charts` | Google Play reviews, app details, keyword search, top charts, developer listings, similar apps — 6 modes | Play keeps reviews **per language, and the piles do not overlap**. `com.spotify.music`, 13 Sep 2026: 18 languages x 600 = **10,800 distinct review IDs, 0 duplicates between languages** |
-| `snow_leo_data/airbnb-listings-prices-availability-calendar-reviews-scraper` | Airbnb listings, details, the day-by-day availability calendar with occupancy rates, and reviews | Airbnb search hands out at most **270 rows per query** which contain **227 distinct listings**. Paris, 13 Sep 2026: flat pagination 257 listings from 7 queries; adaptive map grid **1,916 from 63 queries — 7.46x**, in 117 s |
-| `snow_leo_data/redfin-real-estate-listings-rentals-property-scraper` | Redfin by city, county, neighborhood or ZIP: price, beds, baths, area, year, DOM, MLS number and description, agent, coordinates; property card adds parcel, tax rate, schools, climate risk, permits, zoning | Redfin's search endpoint **has no pagination** — `page_number=2` returns page 1 byte for byte. Redfin's own "Download All" CSV export stops at **350** listings |
+| `snow_leo_data/airbnb-scraper-listings-prices-calendar-reviews-occupancy` | Airbnb listings, details, the day-by-day availability calendar with occupancy rates, and reviews | Airbnb search hands out at most **270 rows per query** which contain **227 distinct listings**. Paris, 13 Sep 2026: flat pagination 257 listings from 7 queries; adaptive map grid **1,916 from 63 queries — 7.46x**, in 117 s |
+| `snow_leo_data/redfin-scraper-property-listings-rentals-prices-sold` | Redfin by city, county, neighborhood or ZIP: price, beds, baths, area, year, DOM, MLS number and description, agent, coordinates; property card adds parcel, tax rate, schools, climate risk, permits, zoning | Redfin's search endpoint **has no pagination** — `page_number=2` returns page 1 byte for byte. Redfin's own "Download All" CSV export stops at **350** listings |
 
 ### 4. Risk & Compliance
 
 ```
-https://mcp.apify.com/?actors=snow_leo_data/ofac-sdn-eu-un-sanctions-list-screening,snow_leo_data/cve-nvd-kev-vulnerability-scraper,snow_leo_data/dns-records-mx-whois-lookup-dmarc-spf-domain-monitor,snow_leo_data/ted-sam-gov-government-tenders-procurement-contracts-scraper
+https://mcp.apify.com/?actors=snow_leo_data/ofac-sdn-eu-un-sanctions-list-screening,snow_leo_data/cve-scraper-nvd-kev-epss-vulnerability-database,snow_leo_data/dns-records-mx-whois-lookup-dmarc-spf-domain-monitor,snow_leo_data/government-tenders-scraper-ted-sam-gov-procurement
 ```
 
 Four checks an agent runs before it recommends doing business with someone: is
@@ -94,9 +94,9 @@ receive mail, and is there a public contract behind it.
 | Actor | What it returns | Measured |
 |---|---|---|
 | `snow_leo_data/ofac-sdn-eu-un-sanctions-list-screening` | US Treasury OFAC SDN, the EU consolidated list and the UN Security Council consolidated list, joined, with which authorities list each name | **26,633 records** against the 19,388 in OFAC alone — 37% more. OFAC 19,388, EU 6,234, UN 1,011. **4,370 listed by two or more authorities, 1,693 by all three.** No API key, no registration, no proxy |
-| `snow_leo_data/cve-nvd-kev-vulnerability-scraper` | Every CVE from the NIST National Vulnerability Database, joined with CISA KEV and EPSS | **389,995 CVEs** — the whole NVD catalogue, read live |
+| `snow_leo_data/cve-scraper-nvd-kev-epss-vulnerability-database` | Every CVE from the NIST National Vulnerability Database, joined with CISA KEV and EPSS | **389,995 CVEs** — the whole NVD catalogue, read live |
 | `snow_leo_data/dns-records-mx-whois-lookup-dmarc-spf-domain-monitor` | One row per domain with **80 fields**: A, AAAA, MX, NS, TXT, SOA, CAA, CNAME chain, DNSSEC, SPF/DKIM/DMARC posture checked against the standards, registration record, TLS certificate. Monitor mode returns only domains whose records moved, with what changed | Public sources over HTTPS, DNS-over-HTTPS and WHOIS on port 43. No API key, no proxy, no browser, no paid feed |
-| `snow_leo_data/ted-sam-gov-government-tenders-procurement-contracts-scraper` | Four official procurement feeds in one row shape: EU TED, UK Find a Tender, UK Contracts Finder, US SAM.gov | **48 buyer countries in a single measured window** — 47 in one 7-day slice of TED (4–11 Sep 2026, **19,795 notices**) plus the United States from SAM.gov |
+| `snow_leo_data/government-tenders-scraper-ted-sam-gov-procurement` | Four official procurement feeds in one row shape: EU TED, UK Find a Tender, UK Contracts Finder, US SAM.gov | **48 buyer countries in a single measured window** — 47 in one 7-day slice of TED (4–11 Sep 2026, **19,795 notices**) plus the United States from SAM.gov |
 
 ### 5. News & Social
 
@@ -136,16 +136,16 @@ Add only the servers you want:
 {
   "mcpServers": {
     "snowleo-leads": {
-      "url": "https://mcp.apify.com/?actors=snow_leo_data/google-maps-places-scraper-leads-emails,snow_leo_data/yellow-pages-bbb-europages-business-directory-leads-scraper,snow_leo_data/duckduckgo-local-business-scraper,snow_leo_data/no-website-local-business-leads-openstreetmap,snow_leo_data/website-contact-email-phone-social-scraper-lead-extractor"
+      "url": "https://mcp.apify.com/?actors=snow_leo_data/google-maps-places-scraper-leads-emails,snow_leo_data/yellow-pages-scraper-bbb-europages-business-directory-leads,snow_leo_data/duckduckgo-scraper-local-business-maps-leads,snow_leo_data/no-website-local-business-leads-openstreetmap,snow_leo_data/contact-scraper-website-emails-phones-socials-extractor"
     },
     "snowleo-jobs": {
-      "url": "https://mcp.apify.com/?actors=snow_leo_data/greenhouse-workday-lever-ashby-ats-jobs-scraper,snow_leo_data/seek-jobstreet-jobsdb-australia-jobs-scraper,snow_leo_data/jobs-ch-scraper-swiss-switzerland-jobs,snow_leo_data/the-muse-remote-company-jobs-scraper"
+      "url": "https://mcp.apify.com/?actors=snow_leo_data/greenhouse-workday-lever-ashby-ats-jobs-scraper,snow_leo_data/seek-scraper-jobstreet-jobsdb-australia-jobs-salaries,snow_leo_data/jobs-ch-scraper-swiss-switzerland-jobs,snow_leo_data/the-muse-scraper-remote-company-jobs-board"
     },
     "snowleo-marketplaces": {
-      "url": "https://mcp.apify.com/?actors=snow_leo_data/amazon-product-scraper-prices-asin-bestsellers,snow_leo_data/shopify-scraper-products-inventory-variants-sku-prices,snow_leo_data/apple-app-store-reviews-ratings-ios-apps-scraper,snow_leo_data/google-play-store-scraper-apps-reviews-charts,snow_leo_data/airbnb-listings-prices-availability-calendar-reviews-scraper,snow_leo_data/redfin-real-estate-listings-rentals-property-scraper"
+      "url": "https://mcp.apify.com/?actors=snow_leo_data/amazon-product-scraper-prices-asin-bestsellers,snow_leo_data/shopify-scraper-products-inventory-variants-sku-prices,snow_leo_data/apple-app-store-scraper-reviews-ratings-aso-ios-apps,snow_leo_data/google-play-store-scraper-apps-reviews-charts,snow_leo_data/airbnb-scraper-listings-prices-calendar-reviews-occupancy,snow_leo_data/redfin-scraper-property-listings-rentals-prices-sold"
     },
     "snowleo-risk": {
-      "url": "https://mcp.apify.com/?actors=snow_leo_data/ofac-sdn-eu-un-sanctions-list-screening,snow_leo_data/cve-nvd-kev-vulnerability-scraper,snow_leo_data/dns-records-mx-whois-lookup-dmarc-spf-domain-monitor,snow_leo_data/ted-sam-gov-government-tenders-procurement-contracts-scraper"
+      "url": "https://mcp.apify.com/?actors=snow_leo_data/ofac-sdn-eu-un-sanctions-list-screening,snow_leo_data/cve-scraper-nvd-kev-epss-vulnerability-database,snow_leo_data/dns-records-mx-whois-lookup-dmarc-spf-domain-monitor,snow_leo_data/government-tenders-scraper-ted-sam-gov-procurement"
     },
     "snowleo-media": {
       "url": "https://mcp.apify.com/?actors=snow_leo_data/google-news-articles-media-monitoring-brand-mentions-tracker,snow_leo_data/telegram-channel-scraper"
@@ -241,26 +241,26 @@ store API on 17 September 2026; paid Apify plans pay less.
 
 | Actor | Price |
 |---|---|
-| `duckduckgo-local-business-scraper` | $0.30 / 1,000 businesses |
+| `duckduckgo-scraper-local-business-maps-leads` | $0.30 / 1,000 businesses |
 | `shopify-scraper-products-inventory-variants-sku-prices` | $0.40 / 1,000 products |
-| `redfin-real-estate-listings-rentals-property-scraper` | $0.45 / 1,000 listings + $0.002 per run start |
-| `apple-app-store-reviews-ratings-ios-apps-scraper` | $0.05 / 1,000 rows |
+| `redfin-scraper-property-listings-rentals-prices-sold` | $0.45 / 1,000 listings + $0.002 per run start |
+| `apple-app-store-scraper-reviews-ratings-aso-ios-apps` | $0.05 / 1,000 rows |
 | `google-play-store-scraper-apps-reviews-charts` | $0.05 / 1,000 rows |
 | `no-website-local-business-leads-openstreetmap` | $0.50 / 1,000 businesses |
 | `telegram-channel-scraper` | $0.50 / 1,000 messages |
 | `amazon-product-scraper-prices-asin-bestsellers` | $0.49 / 1,000 products |
-| `airbnb-listings-prices-availability-calendar-reviews-scraper` | $0.49 / 1,000 listings |
-| `cve-nvd-kev-vulnerability-scraper` | $0.49 / 1,000 records |
+| `airbnb-scraper-listings-prices-calendar-reviews-occupancy` | $0.49 / 1,000 listings |
+| `cve-scraper-nvd-kev-epss-vulnerability-database` | $0.49 / 1,000 records |
 | `ofac-sdn-eu-un-sanctions-list-screening` | $0.49 / 1,000 records |
-| `the-muse-remote-company-jobs-scraper` | $0.49 / 1,000 jobs |
-| `yellow-pages-bbb-europages-business-directory-leads-scraper` | $0.60 / 1,000 businesses |
+| `the-muse-scraper-remote-company-jobs-board` | $0.49 / 1,000 jobs |
+| `yellow-pages-scraper-bbb-europages-business-directory-leads` | $0.60 / 1,000 businesses |
 | `google-maps-places-scraper-leads-emails` | $1.50 / 1,000 places, everything included — detail card, filters and website emails are not billed separately |
-| `website-contact-email-phone-social-scraper-lead-extractor` | $0.99 / 1,000 websites |
+| `contact-scraper-website-emails-phones-socials-extractor` | $0.99 / 1,000 websites |
 | `google-news-articles-media-monitoring-brand-mentions-tracker` | $0.99 / 1,000 articles |
 | `greenhouse-workday-lever-ashby-ats-jobs-scraper` | $0.99 / 1,000 jobs |
 | `jobs-ch-scraper-swiss-switzerland-jobs` | $0.99 / 1,000 jobs |
-| `seek-jobstreet-jobsdb-australia-jobs-scraper` | $0.99 / 1,000 jobs |
-| `ted-sam-gov-government-tenders-procurement-contracts-scraper` | $0.99 / 1,000 notices |
+| `seek-scraper-jobstreet-jobsdb-australia-jobs-salaries` | $0.99 / 1,000 jobs |
+| `government-tenders-scraper-ted-sam-gov-procurement` | $0.99 / 1,000 notices |
 | `dns-records-mx-whois-lookup-dmarc-spf-domain-monitor` | $2.00 / 1,000 domains + $0.002 per run start |
 
 ---

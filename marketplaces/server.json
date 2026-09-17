@@ -13,7 +13,7 @@
   "remotes": [
     {
       "type": "streamable-http",
-      "url": "https://mcp.apify.com/?actors=snow_leo_data/amazon-product-scraper-prices-asin-bestsellers,snow_leo_data/shopify-scraper-products-inventory-variants-sku-prices,snow_leo_data/apple-app-store-reviews-ratings-ios-apps-scraper,snow_leo_data/google-play-store-scraper-apps-reviews-charts,snow_leo_data/airbnb-listings-prices-availability-calendar-reviews-scraper,snow_leo_data/redfin-real-estate-listings-rentals-property-scraper"
+      "url": "https://mcp.apify.com/?actors=snow_leo_data/amazon-product-scraper-prices-asin-bestsellers,snow_leo_data/shopify-scraper-products-inventory-variants-sku-prices,snow_leo_data/apple-app-store-scraper-reviews-ratings-aso-ios-apps,snow_leo_data/google-play-store-scraper-apps-reviews-charts,snow_leo_data/airbnb-scraper-listings-prices-calendar-reviews-occupancy,snow_leo_data/redfin-scraper-property-listings-rentals-prices-sold"
     }
   ],
   "_meta": {
@@ -27,10 +27,10 @@
         "actors": [
           "snow_leo_data/amazon-product-scraper-prices-asin-bestsellers",
           "snow_leo_data/shopify-scraper-products-inventory-variants-sku-prices",
-          "snow_leo_data/apple-app-store-reviews-ratings-ios-apps-scraper",
+          "snow_leo_data/apple-app-store-scraper-reviews-ratings-aso-ios-apps",
           "snow_leo_data/google-play-store-scraper-apps-reviews-charts",
-          "snow_leo_data/airbnb-listings-prices-availability-calendar-reviews-scraper",
-          "snow_leo_data/redfin-real-estate-listings-rentals-property-scraper"
+          "snow_leo_data/airbnb-scraper-listings-prices-calendar-reviews-occupancy",
+          "snow_leo_data/redfin-scraper-property-listings-rentals-prices-sold"
         ]
       },
       "io.github.snowleo.mcp": {

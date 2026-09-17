@@ -3,7 +3,7 @@
   "name": "io.github.MagzhanSan/snowleo-jobs",
   "title": "Snow Leo Jobs & Hiring",
   "description": "Live job listings from 20 ATS platforms plus SEEK, JobStreet, JobsDB, jobs.ch and The Muse",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "websiteUrl": "https://github.com/MagzhanSan/mcp-servers-snowleo/tree/main/jobs",
   "repository": {
     "url": "https://github.com/MagzhanSan/mcp-servers-snowleo",
@@ -13,7 +13,7 @@
   "remotes": [
     {
       "type": "streamable-http",
-      "url": "https://mcp.apify.com/?actors=snow_leo_data/greenhouse-workday-lever-ashby-ats-jobs-scraper,snow_leo_data/seek-jobstreet-jobsdb-australia-jobs-scraper,snow_leo_data/jobs-ch-scraper-swiss-switzerland-jobs,snow_leo_data/the-muse-remote-company-jobs-scraper"
+      "url": "https://mcp.apify.com/?actors=snow_leo_data/greenhouse-workday-lever-ashby-ats-jobs-scraper,snow_leo_data/seek-scraper-jobstreet-jobsdb-australia-jobs-salaries,snow_leo_data/jobs-ch-scraper-swiss-switzerland-jobs,snow_leo_data/the-muse-scraper-remote-company-jobs-board"
     }
   ],
   "_meta": {
@@ -26,9 +26,9 @@
         "billing": "The connecting user's own Apify account is billed per result; there is no key to buy from the publisher",
         "actors": [
           "snow_leo_data/greenhouse-workday-lever-ashby-ats-jobs-scraper",
-          "snow_leo_data/seek-jobstreet-jobsdb-australia-jobs-scraper",
+          "snow_leo_data/seek-scraper-jobstreet-jobsdb-australia-jobs-salaries",
           "snow_leo_data/jobs-ch-scraper-swiss-switzerland-jobs",
-          "snow_leo_data/the-muse-remote-company-jobs-scraper"
+          "snow_leo_data/the-muse-scraper-remote-company-jobs-board"
         ]
       },
       "io.github.snowleo.mcp": {

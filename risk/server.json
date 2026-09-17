@@ -13,7 +13,7 @@
   "remotes": [
     {
       "type": "streamable-http",
-      "url": "https://mcp.apify.com/?actors=snow_leo_data/ofac-sdn-eu-un-sanctions-list-screening,snow_leo_data/cve-nvd-kev-vulnerability-scraper,snow_leo_data/dns-records-mx-whois-lookup-dmarc-spf-domain-monitor,snow_leo_data/ted-sam-gov-government-tenders-procurement-contracts-scraper"
+      "url": "https://mcp.apify.com/?actors=snow_leo_data/ofac-sdn-eu-un-sanctions-list-screening,snow_leo_data/cve-scraper-nvd-kev-epss-vulnerability-database,snow_leo_data/dns-records-mx-whois-lookup-dmarc-spf-domain-monitor,snow_leo_data/government-tenders-scraper-ted-sam-gov-procurement"
     }
   ],
   "_meta": {
@@ -26,9 +26,9 @@
         "billing": "The connecting user's own Apify account is billed per result; there is no key to buy from the publisher",
         "actors": [
           "snow_leo_data/ofac-sdn-eu-un-sanctions-list-screening",
-          "snow_leo_data/cve-nvd-kev-vulnerability-scraper",
+          "snow_leo_data/cve-scraper-nvd-kev-epss-vulnerability-database",
           "snow_leo_data/dns-records-mx-whois-lookup-dmarc-spf-domain-monitor",
-          "snow_leo_data/ted-sam-gov-government-tenders-procurement-contracts-scraper"
+          "snow_leo_data/government-tenders-scraper-ted-sam-gov-procurement"
         ]
       },
       "io.github.snowleo.mcp": {
