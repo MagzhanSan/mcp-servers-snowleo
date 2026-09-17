@@ -1,12 +1,12 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "io.github.YOUR-GITHUB-USERNAME/snowleo-marketplaces",
+  "name": "io.github.MagzhanSan/snowleo-marketplaces",
   "title": "Snow Leo Marketplaces & Prices",
   "description": "Priced listings from Amazon, Shopify stores, the App Store, Google Play, Airbnb and Redfin",
   "version": "1.0.0",
-  "websiteUrl": "https://github.com/YOUR-GITHUB-USERNAME/mcp-servers-snowleo/tree/main/marketplaces",
+  "websiteUrl": "https://github.com/MagzhanSan/mcp-servers-snowleo/tree/main/marketplaces",
   "repository": {
-    "url": "https://github.com/YOUR-GITHUB-USERNAME/mcp-servers-snowleo",
+    "url": "https://github.com/MagzhanSan/mcp-servers-snowleo",
     "source": "github",
     "subfolder": "marketplaces"
   },

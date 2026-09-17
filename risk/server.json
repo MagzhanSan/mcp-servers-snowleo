@@ -1,12 +1,12 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "io.github.YOUR-GITHUB-USERNAME/snowleo-risk",
+  "name": "io.github.MagzhanSan/snowleo-risk",
   "title": "Snow Leo Risk & Compliance",
   "description": "Screen names against OFAC, EU and UN lists; check CVEs, domain DNS and WHOIS, and public tenders",
   "version": "1.0.0",
-  "websiteUrl": "https://github.com/YOUR-GITHUB-USERNAME/mcp-servers-snowleo/tree/main/risk",
+  "websiteUrl": "https://github.com/MagzhanSan/mcp-servers-snowleo/tree/main/risk",
   "repository": {
-    "url": "https://github.com/YOUR-GITHUB-USERNAME/mcp-servers-snowleo",
+    "url": "https://github.com/MagzhanSan/mcp-servers-snowleo",
     "source": "github",
     "subfolder": "risk"
   },

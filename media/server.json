@@ -1,12 +1,12 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "io.github.YOUR-GITHUB-USERNAME/snowleo-media",
+  "name": "io.github.MagzhanSan/snowleo-media",
   "title": "Snow Leo News & Social",
   "description": "Read Google News across 80 editions and any public Telegram channel, without an API key",
   "version": "1.0.0",
-  "websiteUrl": "https://github.com/YOUR-GITHUB-USERNAME/mcp-servers-snowleo/tree/main/media",
+  "websiteUrl": "https://github.com/MagzhanSan/mcp-servers-snowleo/tree/main/media",
   "repository": {
-    "url": "https://github.com/YOUR-GITHUB-USERNAME/mcp-servers-snowleo",
+    "url": "https://github.com/MagzhanSan/mcp-servers-snowleo",
     "source": "github",
     "subfolder": "media"
   },
