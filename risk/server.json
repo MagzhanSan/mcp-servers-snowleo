@@ -1,0 +1,45 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.YOUR-GITHUB-USERNAME/snowleo-risk",
+  "title": "Snow Leo Risk & Compliance",
+  "description": "Screen names against OFAC, EU and UN lists; check CVEs, domain DNS and WHOIS, and public tenders",
+  "version": "1.0.0",
+  "websiteUrl": "https://github.com/YOUR-GITHUB-USERNAME/mcp-servers-snowleo/tree/main/risk",
+  "repository": {
+    "url": "https://github.com/YOUR-GITHUB-USERNAME/mcp-servers-snowleo",
+    "source": "github",
+    "subfolder": "risk"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.apify.com/?actors=snow_leo_data/ofac-sdn-eu-un-sanctions-list-screening,snow_leo_data/cve-nvd-kev-vulnerability-scraper,snow_leo_data/dns-records-mx-whois-lookup-dmarc-spf-domain-monitor,snow_leo_data/ted-sam-gov-government-tenders-procurement-contracts-scraper"
+    }
+  ],
+  "_meta": {
+    "io.modelcontextprotocol.registry/publisher-provided": {
+      "io.apify": {
+        "provider": "Apify",
+        "gateway": "https://mcp.apify.com",
+        "publisher": "snow_leo_data",
+        "authentication": "OAuth with the user's own Apify account, or an Apify API token in the Authorization header",
+        "billing": "The connecting user's own Apify account is billed per result; there is no key to buy from the publisher",
+        "actors": [
+          "snow_leo_data/ofac-sdn-eu-un-sanctions-list-screening",
+          "snow_leo_data/cve-nvd-kev-vulnerability-scraper",
+          "snow_leo_data/dns-records-mx-whois-lookup-dmarc-spf-domain-monitor",
+          "snow_leo_data/ted-sam-gov-government-tenders-procurement-contracts-scraper"
+        ]
+      },
+      "io.github.snowleo.mcp": {
+        "toolCount": 4,
+        "measured": [
+          "Sanctions screening joins US Treasury OFAC SDN (19,388), the EU consolidated list (6,234) and the UN Security Council list (1,011) into 26,633 records against the 19,388 in OFAC alone; 4,370 names are listed by two or more authorities and 1,693 by all three.",
+          "The whole NIST National Vulnerability Database, 389,995 CVEs, joined with CISA KEV and EPSS.",
+          "One row per domain with 80 fields: A, AAAA, MX, NS, TXT, SOA, CAA, the CNAME chain, DNSSEC, SPF/DKIM/DMARC posture checked against the standards, the WHOIS registration record and the TLS certificate. Monitor mode returns only domains whose records moved, with what changed.",
+          "Public procurement from EU TED, UK Find a Tender, UK Contracts Finder and US SAM.gov in one row shape: 48 buyer countries in a single measured window, 47 of them in one 7-day slice of TED holding 19,795 notices (4-11 Sep 2026)."
+        ]
+      }
+    }
+  }
+}

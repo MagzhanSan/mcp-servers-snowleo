@@ -1,0 +1,45 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.YOUR-GITHUB-USERNAME/snowleo-jobs",
+  "title": "Snow Leo Jobs & Hiring",
+  "description": "Live job listings from 20 ATS platforms plus SEEK, JobStreet, JobsDB, jobs.ch and The Muse",
+  "version": "1.0.0",
+  "websiteUrl": "https://github.com/YOUR-GITHUB-USERNAME/mcp-servers-snowleo/tree/main/jobs",
+  "repository": {
+    "url": "https://github.com/YOUR-GITHUB-USERNAME/mcp-servers-snowleo",
+    "source": "github",
+    "subfolder": "jobs"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.apify.com/?actors=snow_leo_data/greenhouse-workday-lever-ashby-ats-jobs-scraper,snow_leo_data/seek-jobstreet-jobsdb-australia-jobs-scraper,snow_leo_data/jobs-ch-scraper-swiss-switzerland-jobs,snow_leo_data/the-muse-remote-company-jobs-scraper"
+    }
+  ],
+  "_meta": {
+    "io.modelcontextprotocol.registry/publisher-provided": {
+      "io.apify": {
+        "provider": "Apify",
+        "gateway": "https://mcp.apify.com",
+        "publisher": "snow_leo_data",
+        "authentication": "OAuth with the user's own Apify account, or an Apify API token in the Authorization header",
+        "billing": "The connecting user's own Apify account is billed per result; there is no key to buy from the publisher",
+        "actors": [
+          "snow_leo_data/greenhouse-workday-lever-ashby-ats-jobs-scraper",
+          "snow_leo_data/seek-jobstreet-jobsdb-australia-jobs-scraper",
+          "snow_leo_data/jobs-ch-scraper-swiss-switzerland-jobs",
+          "snow_leo_data/the-muse-remote-company-jobs-scraper"
+        ]
+      },
+      "io.github.snowleo.mcp": {
+        "toolCount": 4,
+        "measured": [
+          "Jobs read live from 20 applicant tracking systems including Greenhouse, Workday, Lever, Ashby, SmartRecruiters, Oracle Cloud, BrassRing and UKG: 59,185 jobs in one run, with 1,045 company boards built in.",
+          "The SEEK family API stops at 500 jobs per query (page 6 at 100 rows returns an empty list); measured 1,500 unique jobs in 120 s from one run, zero duplicates, across 8 markets.",
+          "jobs.ch answers HTTP 422 at page 101, capping one query at 2,000 of the 46,121 jobs on the site; measured 2,400 unique jobs in 64 s, zero duplicates.",
+          "The Muse answers HTTP 400 at page 100, capping one query at 1,980 of 411,813 jobs; measured 2,060 unique jobs in 176 s, zero duplicates."
+        ]
+      }
+    }
+  }
+}

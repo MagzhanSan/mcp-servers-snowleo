@@ -1,0 +1,41 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.YOUR-GITHUB-USERNAME/snowleo-media",
+  "title": "Snow Leo News & Social",
+  "description": "Read Google News across 80 editions and any public Telegram channel, without an API key",
+  "version": "1.0.0",
+  "websiteUrl": "https://github.com/YOUR-GITHUB-USERNAME/mcp-servers-snowleo/tree/main/media",
+  "repository": {
+    "url": "https://github.com/YOUR-GITHUB-USERNAME/mcp-servers-snowleo",
+    "source": "github",
+    "subfolder": "media"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.apify.com/?actors=snow_leo_data/google-news-articles-media-monitoring-brand-mentions-tracker,snow_leo_data/telegram-channel-scraper"
+    }
+  ],
+  "_meta": {
+    "io.modelcontextprotocol.registry/publisher-provided": {
+      "io.apify": {
+        "provider": "Apify",
+        "gateway": "https://mcp.apify.com",
+        "publisher": "snow_leo_data",
+        "authentication": "OAuth with the user's own Apify account, or an Apify API token in the Authorization header",
+        "billing": "The connecting user's own Apify account is billed per result; there is no key to buy from the publisher",
+        "actors": [
+          "snow_leo_data/google-news-articles-media-monitoring-brand-mentions-tracker",
+          "snow_leo_data/telegram-channel-scraper"
+        ]
+      },
+      "io.github.snowleo.mcp": {
+        "toolCount": 2,
+        "measured": [
+          "A Google News feed silently stops at about 99 items with no cursor, no page two and no error; splitting one query into 30 daily windows returned 2,070 articles from 31 requests against 99 from one (12 Sep 2026). Every article carries the publisher's own URL rather than the news.google.com redirect.",
+          "Any public Telegram channel through its web preview, 68 fields per message including reactions counted per emoji, the channel numeric id, author signature, poll results, forwards, replies, inline buttons and direct CDN links to attachments, plus in-channel keyword search and handle lookup. No account, no bot token, no MTProto API."
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.YOUR-GITHUB-USERNAME/snowleo-marketplaces",
+  "title": "Snow Leo Marketplaces & Prices",
+  "description": "Priced listings from Amazon, Shopify stores, the App Store, Google Play, Airbnb and Redfin",
+  "version": "1.0.0",
+  "websiteUrl": "https://github.com/YOUR-GITHUB-USERNAME/mcp-servers-snowleo/tree/main/marketplaces",
+  "repository": {
+    "url": "https://github.com/YOUR-GITHUB-USERNAME/mcp-servers-snowleo",
+    "source": "github",
+    "subfolder": "marketplaces"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.apify.com/?actors=snow_leo_data/amazon-product-scraper-prices-asin-bestsellers,snow_leo_data/shopify-inventory-products-variants-sku-prices-store-scraper,snow_leo_data/apple-app-store-reviews-ratings-ios-apps-scraper,snow_leo_data/google-play-store-scraper-apps-reviews-charts,snow_leo_data/airbnb-listings-prices-availability-calendar-reviews-scraper,snow_leo_data/redfin-real-estate-listings-rentals-property-scraper"
+    }
+  ],
+  "_meta": {
+    "io.modelcontextprotocol.registry/publisher-provided": {
+      "io.apify": {
+        "provider": "Apify",
+        "gateway": "https://mcp.apify.com",
+        "publisher": "snow_leo_data",
+        "authentication": "OAuth with the user's own Apify account, or an Apify API token in the Authorization header",
+        "billing": "The connecting user's own Apify account is billed per result; there is no key to buy from the publisher",
+        "actors": [
+          "snow_leo_data/amazon-product-scraper-prices-asin-bestsellers",
+          "snow_leo_data/shopify-inventory-products-variants-sku-prices-store-scraper",
+          "snow_leo_data/apple-app-store-reviews-ratings-ios-apps-scraper",
+          "snow_leo_data/google-play-store-scraper-apps-reviews-charts",
+          "snow_leo_data/airbnb-listings-prices-availability-calendar-reviews-scraper",
+          "snow_leo_data/redfin-real-estate-listings-rentals-property-scraper"
+        ]
+      },
+      "io.github.snowleo.mcp": {
+        "toolCount": 6,
+        "measured": [
+          "One Amazon search stops at 306 products for 'wireless earbuds' while Amazon's own header claimed over 20,000; six price bands returned 96 products, 96 unique, zero overlap.",
+          "Of 47 live Shopify storefronts, 14 refuse /products.json on their own domain; reading the shop's Shopify origin recovered 10 of those 14, making 43 stores readable instead of 33.",
+          "Apple caps reviews at 500 per storefront per sort order (page 11 returns HTTP 400); opening both sort windows gave 937 unique reviews on one app with only 63 shared, across 59 storefronts.",
+          "Google Play keeps reviews in separate non-overlapping language piles: com.spotify.music on 13 Sep 2026 gave 10,800 distinct review IDs from 18 languages with 0 duplicates between them.",
+          "Airbnb search hands out at most 270 rows per query containing 227 distinct listings; on Paris, 13 Sep 2026, flat pagination gave 257 listings from 7 queries and an adaptive map grid gave 1,916 from 63 queries (7.46x) in 117 s.",
+          "Redfin's search endpoint has no pagination at all - page_number=2 returns page 1 byte for byte - and Redfin's own Download All CSV export stops at 350 listings."
+        ]
+      }
+    }
+  }
+}

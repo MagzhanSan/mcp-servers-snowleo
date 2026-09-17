@@ -1,0 +1,47 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.YOUR-GITHUB-USERNAME/snowleo-leads",
+  "title": "Snow Leo Leads & Contacts",
+  "description": "Local business leads from Google Maps, 7 directories, DuckDuckGo and OpenStreetMap, with contacts",
+  "version": "1.0.0",
+  "websiteUrl": "https://github.com/YOUR-GITHUB-USERNAME/mcp-servers-snowleo/tree/main/leads",
+  "repository": {
+    "url": "https://github.com/YOUR-GITHUB-USERNAME/mcp-servers-snowleo",
+    "source": "github",
+    "subfolder": "leads"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.apify.com/?actors=snow_leo_data/google-maps-places-scraper-leads-emails,snow_leo_data/yellow-pages-bbb-europages-business-directory-leads-scraper,snow_leo_data/duckduckgo-local-business-scraper,snow_leo_data/no-website-local-business-leads-openstreetmap,snow_leo_data/website-contact-email-phone-social-scraper-lead-extractor"
+    }
+  ],
+  "_meta": {
+    "io.modelcontextprotocol.registry/publisher-provided": {
+      "io.apify": {
+        "provider": "Apify",
+        "gateway": "https://mcp.apify.com",
+        "publisher": "snow_leo_data",
+        "authentication": "OAuth with the user's own Apify account, or an Apify API token in the Authorization header",
+        "billing": "The connecting user's own Apify account is billed per result; there is no key to buy from the publisher",
+        "actors": [
+          "snow_leo_data/google-maps-places-scraper-leads-emails",
+          "snow_leo_data/yellow-pages-bbb-europages-business-directory-leads-scraper",
+          "snow_leo_data/duckduckgo-local-business-scraper",
+          "snow_leo_data/no-website-local-business-leads-openstreetmap",
+          "snow_leo_data/website-contact-email-phone-social-scraper-lead-extractor"
+        ]
+      },
+      "io.github.snowleo.mcp": {
+        "toolCount": 5,
+        "measured": [
+          "Google Maps stops near 150 places per search view; an adaptive map grid returned 766 places against 160 for 'coffee' in Austin (4.79x) in 42 s and 168 requests, 12 Sep 2026.",
+          "Every page a human can click on BBB gives 175 unique businesses; bucketed queries returned 524 (Apify runs kt2dccRUXf2Itm2BL = 175, rKU71p8Dxq62dCgQ0 = 524).",
+          "DuckDuckGo local search runs on a different index: of 164 businesses returned across 10 category+city pairs, 82 (50%) were absent from Google Maps swept to its own ceiling; the website field was filled for 97.9% of rows against 79.7% in a Google Maps sample of 300 the same day, 16 Sep 2026.",
+          "OpenStreetMap sweep of Austin, Texas: 7,673 named businesses, 3,932 with no website at all, one Overpass query, 80.5 s. Manchester UK: 5,905 and 4,261 in 13.4 s.",
+          "Reading contact pages as well as the home page found an email on 57 of 135 live business websites against 31 from the home page alone."
+        ]
+      }
+    }
+  }
+}
