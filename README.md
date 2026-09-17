@@ -65,7 +65,7 @@ can compare a Swiss board against a US careers page without reshaping anything.
 ### 3. Marketplaces & Prices
 
 ```
-https://mcp.apify.com/?actors=snow_leo_data/amazon-product-scraper-prices-asin-bestsellers,snow_leo_data/shopify-inventory-products-variants-sku-prices-store-scraper,snow_leo_data/apple-app-store-reviews-ratings-ios-apps-scraper,snow_leo_data/google-play-store-scraper-apps-reviews-charts,snow_leo_data/airbnb-listings-prices-availability-calendar-reviews-scraper,snow_leo_data/redfin-real-estate-listings-rentals-property-scraper
+https://mcp.apify.com/?actors=snow_leo_data/amazon-product-scraper-prices-asin-bestsellers,snow_leo_data/shopify-scraper-products-inventory-variants-sku-prices,snow_leo_data/apple-app-store-reviews-ratings-ios-apps-scraper,snow_leo_data/google-play-store-scraper-apps-reviews-charts,snow_leo_data/airbnb-listings-prices-availability-calendar-reviews-scraper,snow_leo_data/redfin-real-estate-listings-rentals-property-scraper
 ```
 
 Every tool here returns a priced listing out of somebody's catalogue — products,
@@ -75,7 +75,7 @@ catalogue's own result ceiling.
 | Actor | What it returns | Measured |
 |---|---|---|
 | `snow_leo_data/amazon-product-scraper-prices-asin-bestsellers` | amazon.com search, product pages and Best Sellers: prices, list price, discount, rating, stock, seller, specs, BSR, ASIN | **One Amazon search stops at 306 products** for `wireless earbuds` while Amazon's own header claimed over 20,000. Six price bands returned 96 products, **96 unique, zero overlap** |
-| `snow_leo_data/shopify-inventory-products-variants-sku-prices-store-scraper` | Any Shopify storefront: 42 fields per product, every variant, price, compare-at, SKU, barcode, stock, collection | On 47 live storefronts, 14 refuse `/products.json` on their own domain; reading the shop's Shopify origin recovered **10 of those 14** — **43 stores readable instead of 33** |
+| `snow_leo_data/shopify-scraper-products-inventory-variants-sku-prices` | Any Shopify storefront: 42 fields per product, every variant, price, compare-at, SKU, barcode, stock, collection | On 47 live storefronts, 14 refuse `/products.json` on their own domain; reading the shop's Shopify origin recovered **10 of those 14** — **43 stores readable instead of 33** |
 | `snow_leo_data/apple-app-store-reviews-ratings-ios-apps-scraper` | App Store reviews and the full store card, per storefront, across 59 Apple storefronts | Apple caps at **500 reviews per storefront per sort order** (page 11 returns HTTP 400). Opening both sort windows gave **937 unique reviews** on one app, only 63 shared. Notion on 12 Sep 2026: 90,067 ratings in USD in the US storefront, 50,062 in JPY in the Japanese one |
 | `snow_leo_data/google-play-store-scraper-apps-reviews-charts` | Google Play reviews, app details, keyword search, top charts, developer listings, similar apps — 6 modes | Play keeps reviews **per language, and the piles do not overlap**. `com.spotify.music`, 13 Sep 2026: 18 languages x 600 = **10,800 distinct review IDs, 0 duplicates between languages** |
 | `snow_leo_data/airbnb-listings-prices-availability-calendar-reviews-scraper` | Airbnb listings, details, the day-by-day availability calendar with occupancy rates, and reviews | Airbnb search hands out at most **270 rows per query** which contain **227 distinct listings**. Paris, 13 Sep 2026: flat pagination 257 listings from 7 queries; adaptive map grid **1,916 from 63 queries — 7.46x**, in 117 s |
@@ -142,7 +142,7 @@ Add only the servers you want:
       "url": "https://mcp.apify.com/?actors=snow_leo_data/greenhouse-workday-lever-ashby-ats-jobs-scraper,snow_leo_data/seek-jobstreet-jobsdb-australia-jobs-scraper,snow_leo_data/jobs-ch-scraper-swiss-switzerland-jobs,snow_leo_data/the-muse-remote-company-jobs-scraper"
     },
     "snowleo-marketplaces": {
-      "url": "https://mcp.apify.com/?actors=snow_leo_data/amazon-product-scraper-prices-asin-bestsellers,snow_leo_data/shopify-inventory-products-variants-sku-prices-store-scraper,snow_leo_data/apple-app-store-reviews-ratings-ios-apps-scraper,snow_leo_data/google-play-store-scraper-apps-reviews-charts,snow_leo_data/airbnb-listings-prices-availability-calendar-reviews-scraper,snow_leo_data/redfin-real-estate-listings-rentals-property-scraper"
+      "url": "https://mcp.apify.com/?actors=snow_leo_data/amazon-product-scraper-prices-asin-bestsellers,snow_leo_data/shopify-scraper-products-inventory-variants-sku-prices,snow_leo_data/apple-app-store-reviews-ratings-ios-apps-scraper,snow_leo_data/google-play-store-scraper-apps-reviews-charts,snow_leo_data/airbnb-listings-prices-availability-calendar-reviews-scraper,snow_leo_data/redfin-real-estate-listings-rentals-property-scraper"
     },
     "snowleo-risk": {
       "url": "https://mcp.apify.com/?actors=snow_leo_data/ofac-sdn-eu-un-sanctions-list-screening,snow_leo_data/cve-nvd-kev-vulnerability-scraper,snow_leo_data/dns-records-mx-whois-lookup-dmarc-spf-domain-monitor,snow_leo_data/ted-sam-gov-government-tenders-procurement-contracts-scraper"
@@ -242,7 +242,7 @@ store API on 17 September 2026; paid Apify plans pay less.
 | Actor | Price |
 |---|---|
 | `duckduckgo-local-business-scraper` | $0.30 / 1,000 businesses |
-| `shopify-inventory-products-variants-sku-prices-store-scraper` | $0.40 / 1,000 products |
+| `shopify-scraper-products-inventory-variants-sku-prices` | $0.40 / 1,000 products |
 | `redfin-real-estate-listings-rentals-property-scraper` | $0.45 / 1,000 listings + $0.002 per run start |
 | `apple-app-store-reviews-ratings-ios-apps-scraper` | $0.05 / 1,000 rows |
 | `google-play-store-scraper-apps-reviews-charts` | $0.05 / 1,000 rows |
