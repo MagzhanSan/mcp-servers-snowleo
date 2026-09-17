@@ -13,7 +13,7 @@
   "remotes": [
     {
       "type": "streamable-http",
-      "url": "https://mcp.apify.com/?actors=snow_leo_data/amazon-product-scraper-prices-asin-bestsellers,snow_leo_data/shopify-scraper-products-inventory-variants-sku-prices,snow_leo_data/apple-app-store-scraper-reviews-ratings-aso-ios-apps,snow_leo_data/google-play-store-scraper-apps-reviews-charts,snow_leo_data/airbnb-scraper-listings-prices-calendar-reviews-occupancy,snow_leo_data/redfin-scraper-property-listings-rentals-prices-sold"
+      "url": "https://mcp.apify.com/?actors=snow_leo_data/amazon-product-scraper-prices-asin-bestsellers,snow_leo_data/shopify-scraper-products-inventory-variants-sku-prices-store,snow_leo_data/apple-app-store-scraper-reviews-ratings-aso-ios-apps,snow_leo_data/google-play-store-scraper-apps-reviews-charts,snow_leo_data/airbnb-scraper-listings-prices-availability-calendar-reviews,snow_leo_data/redfin-scraper-real-estate-listings-rentals-prices-sold"
     }
   ],
   "_meta": {
@@ -26,11 +26,11 @@
         "billing": "The connecting user's own Apify account is billed per result; there is no key to buy from the publisher",
         "actors": [
           "snow_leo_data/amazon-product-scraper-prices-asin-bestsellers",
-          "snow_leo_data/shopify-scraper-products-inventory-variants-sku-prices",
+          "snow_leo_data/shopify-scraper-products-inventory-variants-sku-prices-store",
           "snow_leo_data/apple-app-store-scraper-reviews-ratings-aso-ios-apps",
           "snow_leo_data/google-play-store-scraper-apps-reviews-charts",
-          "snow_leo_data/airbnb-scraper-listings-prices-calendar-reviews-occupancy",
-          "snow_leo_data/redfin-scraper-property-listings-rentals-prices-sold"
+          "snow_leo_data/airbnb-scraper-listings-prices-availability-calendar-reviews",
+          "snow_leo_data/redfin-scraper-real-estate-listings-rentals-prices-sold"
         ]
       },
       "io.github.snowleo.mcp": {
