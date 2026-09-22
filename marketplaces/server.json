@@ -3,7 +3,7 @@
   "name": "io.github.MagzhanSan/snowleo-marketplaces",
   "title": "Snow Leo Marketplaces & Prices",
   "description": "Priced listings from Amazon, Shopify stores, the App Store, Google Play, Airbnb and Redfin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "websiteUrl": "https://github.com/MagzhanSan/mcp-servers-snowleo/tree/main/marketplaces",
   "repository": {
     "url": "https://github.com/MagzhanSan/mcp-servers-snowleo",
@@ -13,7 +13,7 @@
   "remotes": [
     {
       "type": "streamable-http",
-      "url": "https://mcp.apify.com/?actors=snow_leo_data/amazon-product-scraper-prices-asin-bestsellers,snow_leo_data/shopify-scraper-products-inventory-variants-sku-prices-store,snow_leo_data/apple-app-store-scraper-reviews-ratings-aso-ios-apps,snow_leo_data/google-play-store-scraper-apps-reviews-charts,snow_leo_data/airbnb-scraper-listings-prices-availability-calendar-reviews,snow_leo_data/redfin-scraper-real-estate-listings-rentals-prices-sold"
+      "url": "https://mcp.apify.com/?actors=snow_leo_data/amazon-product-scraper,snow_leo_data/shopify-inventory-scraper,snow_leo_data/app-store-scraper,snow_leo_data/google-play-scraper,snow_leo_data/airbnb-scraper,snow_leo_data/redfin-scraper"
     }
   ],
   "_meta": {
@@ -25,12 +25,12 @@
         "authentication": "OAuth with the user's own Apify account, or an Apify API token in the Authorization header",
         "billing": "The connecting user's own Apify account is billed per result; there is no key to buy from the publisher",
         "actors": [
-          "snow_leo_data/amazon-product-scraper-prices-asin-bestsellers",
-          "snow_leo_data/shopify-scraper-products-inventory-variants-sku-prices-store",
-          "snow_leo_data/apple-app-store-scraper-reviews-ratings-aso-ios-apps",
-          "snow_leo_data/google-play-store-scraper-apps-reviews-charts",
-          "snow_leo_data/airbnb-scraper-listings-prices-availability-calendar-reviews",
-          "snow_leo_data/redfin-scraper-real-estate-listings-rentals-prices-sold"
+          "snow_leo_data/amazon-product-scraper",
+          "snow_leo_data/shopify-inventory-scraper",
+          "snow_leo_data/app-store-scraper",
+          "snow_leo_data/google-play-scraper",
+          "snow_leo_data/airbnb-scraper",
+          "snow_leo_data/redfin-scraper"
         ]
       },
       "io.github.snowleo.mcp": {

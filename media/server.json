@@ -3,7 +3,7 @@
   "name": "io.github.MagzhanSan/snowleo-media",
   "title": "Snow Leo News & Social",
   "description": "Read Google News across 80 editions and any public Telegram channel, without an API key",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "websiteUrl": "https://github.com/MagzhanSan/mcp-servers-snowleo/tree/main/media",
   "repository": {
     "url": "https://github.com/MagzhanSan/mcp-servers-snowleo",
@@ -13,7 +13,7 @@
   "remotes": [
     {
       "type": "streamable-http",
-      "url": "https://mcp.apify.com/?actors=snow_leo_data/google-news-articles-media-monitoring-brand-mentions-tracker,snow_leo_data/telegram-channel-scraper"
+      "url": "https://mcp.apify.com/?actors=snow_leo_data/google-news-scraper,snow_leo_data/telegram-channel-scraper"
     }
   ],
   "_meta": {
@@ -25,7 +25,7 @@
         "authentication": "OAuth with the user's own Apify account, or an Apify API token in the Authorization header",
         "billing": "The connecting user's own Apify account is billed per result; there is no key to buy from the publisher",
         "actors": [
-          "snow_leo_data/google-news-articles-media-monitoring-brand-mentions-tracker",
+          "snow_leo_data/google-news-scraper",
           "snow_leo_data/telegram-channel-scraper"
         ]
       },

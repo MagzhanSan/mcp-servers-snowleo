@@ -74,7 +74,7 @@ git push -u origin main
 3. Вставь адрес самого короткого сервера:
 
 ```
-https://mcp.apify.com/?actors=snow_leo_data/google-news-articles-media-monitoring-brand-mentions-tracker,snow_leo_data/telegram-channel-scraper
+https://mcp.apify.com/?actors=snow_leo_data/google-news-scraper,snow_leo_data/telegram-channel-scraper
 ```
 
 4. Нажми **Add**. Тебя перебросит на Apify — войди своим аккаунтом и разреши.
@@ -153,7 +153,7 @@ curl -s "https://registry.modelcontextprotocol.io/v0/servers?search=snowleo" | h
 3. Вставь адрес сервера. Начни с одного — `media`, он самый короткий:
 
 ```
-https://mcp.apify.com/?actors=snow_leo_data/google-news-articles-media-monitoring-brand-mentions-tracker,snow_leo_data/telegram-channel-scraper
+https://mcp.apify.com/?actors=snow_leo_data/google-news-scraper,snow_leo_data/telegram-channel-scraper
 ```
 
 4. Пройди шаги публикации до конца. Smithery сам сходит на адрес и попробует

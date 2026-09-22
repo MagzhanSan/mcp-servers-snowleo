@@ -3,7 +3,7 @@
   "name": "io.github.MagzhanSan/snowleo-risk",
   "title": "Snow Leo Risk & Compliance",
   "description": "Screen names against OFAC, EU and UN lists; check CVEs, domain DNS and WHOIS, and public tenders",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "websiteUrl": "https://github.com/MagzhanSan/mcp-servers-snowleo/tree/main/risk",
   "repository": {
     "url": "https://github.com/MagzhanSan/mcp-servers-snowleo",
@@ -13,7 +13,7 @@
   "remotes": [
     {
       "type": "streamable-http",
-      "url": "https://mcp.apify.com/?actors=snow_leo_data/ofac-sdn-eu-un-sanctions-list-screening,snow_leo_data/cve-scraper-nvd-kev-epss-vulnerability-database,snow_leo_data/dns-records-mx-whois-lookup-dmarc-spf-domain-monitor,snow_leo_data/government-tenders-scraper-ted-sam-gov-procurement"
+      "url": "https://mcp.apify.com/?actors=snow_leo_data/sanctions-screening-api,snow_leo_data/cve-scraper,snow_leo_data/whois-dns-lookup,snow_leo_data/government-tenders-scraper"
     }
   ],
   "_meta": {
@@ -25,10 +25,10 @@
         "authentication": "OAuth with the user's own Apify account, or an Apify API token in the Authorization header",
         "billing": "The connecting user's own Apify account is billed per result; there is no key to buy from the publisher",
         "actors": [
-          "snow_leo_data/ofac-sdn-eu-un-sanctions-list-screening",
-          "snow_leo_data/cve-scraper-nvd-kev-epss-vulnerability-database",
-          "snow_leo_data/dns-records-mx-whois-lookup-dmarc-spf-domain-monitor",
-          "snow_leo_data/government-tenders-scraper-ted-sam-gov-procurement"
+          "snow_leo_data/sanctions-screening-api",
+          "snow_leo_data/cve-scraper",
+          "snow_leo_data/whois-dns-lookup",
+          "snow_leo_data/government-tenders-scraper"
         ]
       },
       "io.github.snowleo.mcp": {
